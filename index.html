@@ -347,6 +347,46 @@ font-size:90px;
 
 }
 
+  
+.bigBouquet{
+    font-size:160px;
+    animation:bloom 2s ease forwards;
+}
+
+.flowerMessage{
+    font-size:28px;
+    color:#d14f75;
+    font-weight:600;
+    margin-top:20px;
+    animation:fade 1.5s;
+}
+
+.envelope{
+    font-size:100px;
+    margin-top:30px;
+    cursor:pointer;
+    animation:appear 1.5s ease;
+}
+
+.openLetter{
+    font-size:20px;
+    line-height:2;
+    margin-top:20px;
+    animation:fade 1s;
+}
+
+@keyframes appear{
+from{
+opacity:0;
+transform:translateY(40px) scale(.5);
+}
+to{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+}
+
+
 </style>
 </head>
 
@@ -418,11 +458,11 @@ Catch 15 hearts.
 
 <div class="card">
 
+
 <div class="rose">
+💐
+</div>  
 
-🌹
-
-</div>
 
 <h1>
 
@@ -990,29 +1030,25 @@ function waterRose(){
 
 waterCount++;
 
-
-document.getElementById("waterText")
-.innerHTML =
-waterCount+" / 25";
-
+document.getElementById("waterText").innerHTML =
+waterCount+" / 20";
 
 let plant=document.getElementById("plant");
 
 
-
-if(waterCount < 8){
+if(waterCount < 6){
 
 plant.innerHTML="🌱";
 
 }
 
-else if(waterCount < 16){
+else if(waterCount < 12){
 
 plant.innerHTML="🌿";
 
 }
 
-else if(waterCount < 24){
+else if(waterCount < 20){
 
 plant.innerHTML="🌹";
 
@@ -1023,32 +1059,34 @@ else{
 
 plant.innerHTML=`
 
-<div style="
-font-size:90px;
-animation:bloom 2s ease;
-">
-
+<div class="bigBouquet">
 💐
-
 </div>
 
-<div style="
-font-size:45px;
-margin-top:10px;
-">
+<div class="flowerMessage">
+Flowers for you, hon 🌸
+</div>
 
-🌹🌹🌹
+<div id="envelope" 
+class="envelope"
+onclick="openEnvelope()"
+style="display:none">
+
+💌
 
 </div>
 
 `;
 
+
 setTimeout(()=>{
 
-showEnding();
+document.getElementById("envelope").style.display="block";
 
-},3500);
+},2500);
 
+
+}
 
 }
 
@@ -1059,6 +1097,18 @@ showEnding();
 
 // FINAL LETTER 🌹
 
+function openEnvelope(){
+
+document.getElementById("game4")
+.classList.remove("active");
+
+document.getElementById("ending")
+.classList.add("active");
+
+createPetals();
+
+}
+  
 function showEnding(){
 
 
