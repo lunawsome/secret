@@ -18,22 +18,16 @@ box-sizing:border-box;
 font-family:Poppins,sans-serif;
 }
 
+
 body{
-
 background:linear-gradient(180deg,#fff8f5,#ffe6ef,#fffaf5);
-
-overflow:hidden;
-
+overflow-x:hidden;
+overflow-y:auto;
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
-height:100vh;
-
+min-height:100vh;
 color:#5a3a3a;
-
 }
 
 .screen{
@@ -144,11 +138,13 @@ transition:1s;
 
 }
 
+
 .card{
 
 background:rgba(255,255,255,.65);
 
 backdrop-filter:blur(15px);
+-webkit-backdrop-filter:blur(15px);
 
 padding:40px;
 
@@ -161,6 +157,7 @@ max-width:700px;
 width:90%;
 
 }
+
 
 .gameTitle{
 
@@ -311,6 +308,42 @@ bottom:20px;
 font-size:14px;
 
 opacity:.6;
+
+}
+
+@media(max-width:600px){
+
+h1{
+font-size:34px;
+}
+
+.card{
+padding:25px;
+width:95%;
+}
+
+p{
+font-size:16px;
+}
+
+#garden{
+grid-template-columns:repeat(5,45px)!important;
+gap:8px!important;
+}
+
+#garden button{
+width:45px!important;
+height:45px!important;
+font-size:20px!important;
+}
+
+#plant{
+font-size:70px!important;
+}
+
+.rose{
+font-size:90px;
+}
 
 }
 
@@ -610,6 +643,7 @@ if(i===rosePosition){
 
 
 flower.innerHTML="🌹";
+flower.style.transform="scale(1.2)";
 
 
 setTimeout(()=>{
@@ -1009,12 +1043,11 @@ margin-top:10px;
 
 `;
 
-
 setTimeout(()=>{
 
 showEnding();
 
-},2000);
+},3500);
 
 
 }
