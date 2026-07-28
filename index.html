@@ -347,32 +347,32 @@ font-size:90px;
 
 }
 
-  
-.bigBouquet{
-    font-size:160px;
-    animation:bloom 2s ease forwards;
+.bouquetImage{
+width:340px;
+max-width:95%;
+display:block;
+margin:auto;
+animation:bloom 2s ease;
+filter:drop-shadow(0 15px 30px rgba(0,0,0,.25));
 }
 
 .flowerMessage{
-    font-size:28px;
-    color:#d14f75;
-    font-weight:600;
-    margin-top:20px;
-    animation:fade 1.5s;
+margin-top:15px;
+font-size:30px;
+font-weight:600;
+color:#d14f75;
 }
 
-.envelope{
-    font-size:100px;
-    margin-top:30px;
-    cursor:pointer;
-    animation:appear 1.5s ease;
+.envelopeImage{
+width:140px;
+margin-top:25px;
+cursor:pointer;
+animation:appear 1s ease;
+transition:.3s;
 }
 
-.openLetter{
-    font-size:20px;
-    line-height:2;
-    margin-top:20px;
-    animation:fade 1s;
+.envelopeImage:hover{
+transform:scale(1.05);
 }
 
 @keyframes appear{
@@ -456,10 +456,8 @@ Catch 15 hearts.
 
 <div class="card">
 
-
-<div class="rose">
-💐
-</div>  
+<img src="bouquet.PNG"
+class="bouquetImage">
 
 
 <h1>
@@ -1057,34 +1055,29 @@ plant.innerHTML="🌹";
 else{
 
 
-plant.innerHTML=`
+plant.innerHTML = `
 
-<div class="bigBouquet">
-💐
-</div>
+<img src="bouquet.PNG" class="bouquetImage">
 
 <div class="flowerMessage">
-Flowers for you, hon 🌸
+Flowers for you, hon ❤️
 </div>
 
-<div id="envelope" 
-class="envelope"
-onclick="openEnvelope()"
-style="display:none">
+<div id="envelope" style="display:none">
 
-💌
+<img src="envelope.JPG"
+class="envelopeImage"
+onclick="openEnvelope()">
 
 </div>
 
 `;
 
-
-setTimeout(()=>{
+setTimeout(function(){
 
 document.getElementById("envelope").style.display="block";
 
-},2500);
-
+},2000);
 
 }
 
@@ -1096,11 +1089,17 @@ document.getElementById("envelope").style.display="block";
 
 function openEnvelope(){
 
+document.getElementById("game4").style.opacity="0";
+
+setTimeout(function(){
+
 document.getElementById("game4").classList.remove("active");
 
 document.getElementById("ending").classList.add("active");
 
 createPetals();
+
+},800);
 
 }
   
