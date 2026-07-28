@@ -404,10 +404,8 @@ Complete these little challenges. ❤️
 
 </p>
 
-<button onclick="startGame()">
-
+<button type="button" onclick="startGame();">
 Start
-
 </button>
 
 </div>
@@ -487,6 +485,8 @@ Luna 🌙
 </div>
 
 <script>
+
+console.log("JavaScript loaded");
 
 let currentGame = 1;
 let score = 0;
@@ -1096,11 +1096,9 @@ document.getElementById("envelope").style.display="block";
 
 function openEnvelope(){
 
-document.getElementById("game4")
-.classList.remove("active");
+document.getElementById("game4").classList.remove("active");
 
-document.getElementById("ending")
-.classList.add("active");
+document.getElementById("ending").classList.add("active");
 
 createPetals();
 
