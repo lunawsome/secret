@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>National Girlfriend's Day ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+
+background:linear-gradient(180deg,#fff8f5,#ffe6ef,#fffaf5);
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+color:#5a3a3a;
+
+}
+
+.screen{
+
+display:none;
+
+width:100%;
+
+height:100vh;
+
+padding:25px;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+text-align:center;
+
+animation:fade .8s;
+
+}
+
+.active{
+
+display:flex;
+
+}
+
+h1{
+
+font-size:42px;
+
+margin-bottom:15px;
+
+font-family:'Great Vibes',cursive;
+
+color:#d14f75;
+
+}
+
+p{
+
+font-size:18px;
+
+max-width:500px;
+
+line-height:1.7;
+
+}
+
+button{
+
+margin-top:35px;
+
+padding:15px 38px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:18px;
+
+cursor:pointer;
+
+background:#ff7aa5;
+
+color:white;
+
+transition:.3s;
+
+box-shadow:0 8px 20px rgba(255,122,165,.35);
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+}
+
+.progress{
+
+width:280px;
+
+height:12px;
+
+background:#f2d8df;
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-bottom:30px;
+
+}
+
+.bar{
+
+width:0%;
+
+height:100%;
+
+background:#ff7aa5;
+
+transition:1s;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.65);
+
+backdrop-filter:blur(15px);
+
+padding:40px;
+
+border-radius:30px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+max-width:700px;
+
+width:90%;
+
+}
+
+.gameTitle{
+
+font-size:30px;
+
+margin-bottom:15px;
+
+color:#d14f75;
+
+}
+
+#gameArea{
+
+position:relative;
+
+width:100%;
+
+height:65vh;
+
+overflow:hidden;
+
+border-radius:25px;
+
+background:white;
+
+margin-top:25px;
+
+box-shadow:inset 0 0 15px rgba(0,0,0,.05);
+
+}
+
+.heart{
+
+position:absolute;
+
+font-size:34px;
+
+cursor:pointer;
+
+animation:float 5s linear forwards;
+
+}
+
+@keyframes float{
+
+from{
+
+transform:translateY(110%);
+
+}
+
+to{
+
+transform:translateY(-130%);
+
+}
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.petal{
+
+position:absolute;
+
+font-size:22px;
+
+animation:petals linear infinite;
+
+opacity:.8;
+
+}
+
+@keyframes petals{
+
+0%{
+
+transform:translateY(-100px) rotate(0);
+
+}
+
+100%{
+
+transform:translateY(110vh) rotate(360deg);
+
+}
+
+}
+
+.letter{
+
+font-size:20px;
+
+line-height:2;
+
+margin-top:20px;
+
+}
+
+.rose{
+
+font-size:120px;
+
+animation:bloom 2s ease forwards;
+
+transform:scale(.2);
+
+opacity:0;
+
+}
+
+@keyframes bloom{
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+footer{
+
+position:absolute;
+
+bottom:20px;
+
+font-size:14px;
+
+opacity:.6;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="welcome" class="screen active">
+
+<div class="card">
+
+<h1>Hi, hon! 🌸</h1>
+
+<p>
+
+Complete these little challenges. ❤️
+
+</p>
+
+<button onclick="startGame()">
+
+Start
+
+</button>
+
+</div>
+
+</div>
+
+<div id="game1" class="screen">
+
+<div class="progress">
+
+<div class="bar" id="bar"></div>
+
+</div>
+
+<div class="card">
+
+<div class="gameTitle">
+
+❤️ Game 1
+
+</div>
+
+<p>
+
+Catch 15 hearts.
+
+</p>
+
+<h2 id="score">
+
+0 / 15
+
+</h2>
+
+<div id="gameArea"></div>
+
+</div>
+
+</div>
+
+<div id="game2" class="screen"></div>
+
+<div id="game3" class="screen"></div>
+
+<div id="game4" class="screen"></div>
+
+<div id="ending" class="screen">
+
+<div class="card">
+
+<div class="rose">
+
+🌹
+
+</div>
+
+<h1>
+
+Happy National Girlfriends Day
+
+</h1>
+
+<div class="letter">
+
+Forever grateful to have you as my girlfriend.<br><br>
+
+I love you so much.<br><br>
+
+Love,<br>
+
+Luna 🌙
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let currentGame = 1;
+let score = 0;
+let heartsNeeded = 15;
+
+
+// Start Game
+function startGame(){
+
+document.getElementById("welcome").classList.remove("active");
+
+document.getElementById("game1").classList.add("active");
+
+startHeartGame();
+
+}
+
+
+// GAME 1: CATCH HEARTS
+
+function startHeartGame(){
+
+score = 0;
+
+document.getElementById("score").innerHTML = "0 / 15";
+
+document.getElementById("bar").style.width = "0%";
+
+spawnHeart();
+
+}
+
+
+
+function spawnHeart(){
+
+if(score >= heartsNeeded){
+
+finishGame1();
+
+return;
+
+}
+
+
+let heart = document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+
+heart.style.left = Math.random()*85+"%";
+
+heart.style.animationDuration =
+(2 + Math.random()*3)+"s";
+
+
+
+heart.onclick=function(){
+
+score++;
+
+document.getElementById("score").innerHTML =
+score+" / 15";
+
+
+document.getElementById("bar").style.width =
+(score/heartsNeeded*100)+"%";
+
+
+heart.remove();
+
+
+spawnHeart();
+
+};
+
+
+
+document.getElementById("gameArea")
+.appendChild(heart);
+
+
+
+setTimeout(()=>{
+
+if(heart.parentNode){
+
+heart.remove();
+
+spawnHeart();
+
+}
+
+},5000);
+
+
+}
+
+
+
+// GO TO GAME 2
+
+function finishGame1(){
+
+document.getElementById("game1")
+.classList.remove("active");
+
+document.getElementById("game2")
+.classList.add("active");
+
+loadGame2();
+
+}
+
+
+// GAME 2: FIND THE HIDDEN ROSE
+
+let roseRound = 1;
+let maxRoseRounds = 3;
+
+
+function loadGame2(){
+
+document.getElementById("game2").innerHTML = `
+
+<div class="card">
+
+<div class="gameTitle">
+🌹 Game 2
+</div>
+
+<p>
+Find the hidden rose.
+</p>
+
+<h2 id="roseRound">
+Round 1 / 3
+</h2>
+
+<div id="garden"
+style="
+display:grid;
+grid-template-columns:repeat(5,60px);
+gap:10px;
+justify-content:center;
+margin-top:25px;
+">
+</div>
+
+</div>
+
+`;
+
+createGarden();
+
+}
+
+
+
+function createGarden(){
+
+let garden=document.getElementById("garden");
+
+garden.innerHTML="";
+
+
+let rosePosition=Math.floor(Math.random()*25);
+
+
+
+for(let i=0;i<25;i++){
+
+
+let flower=document.createElement("button");
+
+
+flower.style.width="60px";
+flower.style.height="60px";
+flower.style.padding="0";
+flower.style.margin="0";
+flower.style.fontSize="25px";
+
+
+flower.innerHTML="🌼";
+
+
+
+flower.onclick=function(){
+
+
+if(i===rosePosition){
+
+
+flower.innerHTML="🌹";
+
+
+setTimeout(()=>{
+
+
+roseRound++;
+
+
+if(roseRound>maxRoseRounds){
+
+finishGame2();
+
+}
+
+else{
+
+document.getElementById("roseRound")
+.innerHTML=
+"Round "+roseRound+" / 3";
+
+createGarden();
+
+}
+
+
+},700);
+
+
+
+}
+
+else{
+
+
+flower.innerHTML="🍃";
+
+
+}
+
+
+};
+
+
+
+garden.appendChild(flower);
+
+
+
+}
+
+}
+
+
+
+// MOVE TO GAME 3
+
+function finishGame2(){
+
+
+document.getElementById("game2")
+.classList.remove("active");
+
+
+document.getElementById("game3")
+.classList.add("active");
+
+
+loadGame3();
+
+
+}
+
+// GAME 3: BUTTERFLY MEMORY 🦋
+
+let cards = [
+"🌹","🌹",
+"🦋","🦋",
+"🌸","🌸",
+"❤️","❤️"
+];
+
+let firstCard = null;
+let secondCard = null;
+let lockBoard = false;
+let matchedCards = 0;
+
+
+
+function loadGame3(){
+
+matchedCards = 0;
+firstCard = null;
+secondCard = null;
+
+
+document.getElementById("game3").innerHTML = `
+
+<div class="card">
+
+<div class="gameTitle">
+🦋 Game 3
+</div>
+
+<p>
+Match all the pairs.
+</p>
+
+<div id="memoryBoard"
+
+style="
+display:grid;
+grid-template-columns:repeat(4,70px);
+gap:15px;
+justify-content:center;
+margin-top:30px;
+">
+
+</div>
+
+
+<h2 id="memoryStatus">
+0 / 4 matched
+</h2>
+
+
+</div>
+
+`;
+
+
+createMemory();
+
+}
+
+
+
+
+function createMemory(){
+
+
+let board=document.getElementById("memoryBoard");
+
+
+let shuffled=[...cards]
+.sort(()=>Math.random()-0.5);
+
+
+
+shuffled.forEach(symbol=>{
+
+
+let card=document.createElement("button");
+
+
+card.style.width="70px";
+card.style.height="70px";
+card.style.fontSize="30px";
+card.style.padding="0";
+
+
+card.innerHTML="❓";
+
+card.dataset.symbol=symbol;
+
+
+
+card.onclick=function(){
+
+
+if(lockBoard) return;
+
+if(card.innerHTML!=="❓") return;
+
+
+
+card.innerHTML=card.dataset.symbol;
+
+
+
+if(!firstCard){
+
+firstCard=card;
+
+}
+
+else{
+
+
+secondCard=card;
+
+checkMatch();
+
+
+}
+
+
+};
+
+
+
+board.appendChild(card);
+
+
+});
+
+
+}
+
+
+
+
+function checkMatch(){
+
+
+if(firstCard.dataset.symbol === secondCard.dataset.symbol){
+
+
+firstCard=null;
+secondCard=null;
+
+
+matchedCards++;
+
+
+document.getElementById("memoryStatus")
+.innerHTML=
+matchedCards+" / 4 matched";
+
+
+
+if(matchedCards===4){
+
+
+setTimeout(()=>{
+
+finishGame3();
+
+},800);
+
+
+}
+
+
+
+}
+
+else{
+
+
+lockBoard=true;
+
+
+setTimeout(()=>{
+
+
+firstCard.innerHTML="❓";
+
+secondCard.innerHTML="❓";
+
+
+firstCard=null;
+secondCard=null;
+
+
+lockBoard=false;
+
+
+},900);
+
+
+
+}
+
+
+}
+
+
+
+// MOVE TO GAME 4
+
+function finishGame3(){
+
+
+document.getElementById("game3")
+.classList.remove("active");
+
+
+document.getElementById("game4")
+.classList.add("active");
+
+
+loadGame4();
+
+
+}
+
+// GAME 4: GROW THE ROSE BOUQUET 🌱💐
+
+let waterCount = 0;
+let maxWater = 25;
+
+
+function loadGame4(){
+
+waterCount = 0;
+
+document.getElementById("game4").innerHTML = `
+
+<div class="card">
+
+<div class="gameTitle">
+💧 Game 4
+</div>
+
+<p>
+Water the seed and help it bloom into a bouquet for Cielo. 🌹
+</p>
+
+<div id="plant"
+style="
+font-size:90px;
+margin:30px;
+">
+🌱
+</div>
+
+<h2 id="waterText">
+0 / 25
+</h2>
+
+<button onclick="waterRose()">
+💧 Water the Rose
+</button>
+
+</div>
+
+`;
+
+}
+
+
+
+function waterRose(){
+
+waterCount++;
+
+
+document.getElementById("waterText")
+.innerHTML =
+waterCount+" / 25";
+
+
+let plant=document.getElementById("plant");
+
+
+
+if(waterCount < 8){
+
+plant.innerHTML="🌱";
+
+}
+
+else if(waterCount < 16){
+
+plant.innerHTML="🌿";
+
+}
+
+else if(waterCount < 24){
+
+plant.innerHTML="🌹";
+
+}
+
+else{
+
+
+plant.innerHTML=`
+
+<div style="
+font-size:90px;
+animation:bloom 2s ease;
+">
+
+💐
+
+</div>
+
+<div style="
+font-size:45px;
+margin-top:10px;
+">
+
+🌹🌹🌹
+
+</div>
+
+`;
+
+
+setTimeout(()=>{
+
+showEnding();
+
+},2000);
+
+
+}
+
+
+}
+
+
+
+// FINAL LETTER 🌹
+
+function showEnding(){
+
+
+document.getElementById("game4")
+.classList.remove("active");
+
+
+document.getElementById("ending")
+.classList.add("active");
+
+createPetals();
+
+
+}
+
+
+
+// Falling petals effect
+
+function createPetals(){
+
+
+for(let i=0;i<35;i++){
+
+
+let petal=document.createElement("div");
+
+
+petal.className="petal";
+
+petal.innerHTML="🌸";
+
+
+petal.style.left=Math.random()*100+"%";
+
+
+petal.style.animationDuration=
+(3+Math.random()*5)+"s";
+
+
+document.body.appendChild(petal);
+
+
+
+}
+
+
+
+}
+</script>
+
+</body>
+
+</html>
